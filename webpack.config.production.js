@@ -32,7 +32,7 @@ module.exports = {
       loader: "html-loader!markdown-loader?gfm=false"
     }, {
       test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
+      exclude: [/node_modules/, /code-examples/],
       loader: "babel-loader",
       query: {
         presets: ['es2015', 'react']
@@ -46,6 +46,10 @@ module.exports = {
     }, {
       test: /\.svg$/,
       loader: "url?limit=10000&mimetype=image/svg+xml"
-    }]
+  },
+  {
+        test: /\.(woff|eot|ttf)$/,
+        loader: "url-loader?limit=8192"
+      }]
   }
 };
