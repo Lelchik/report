@@ -9,7 +9,7 @@ import {
   Cite,
   CodePane,
   Deck,
-  Fill,
+  Fill,Code,
   Heading,
   Image,
   Layout,
@@ -39,9 +39,13 @@ const examples = {
     react: require('raw!../code-examples/react.js'),
     redux: require('raw!../code-examples/redux.js'),
     reducer: require('raw!../code-examples/reducer.js'),
-
+    action: require('raw!../code-examples/action.js'),
+    reducer1: require('raw!../code-examples/reducer1.js'),
+    nested: require('raw!../code-examples/nested-view-in-composition.js'),
+    composed: require('raw!../code-examples/composed-view.js'),
+    nested1:require('raw!../code-examples/nested-reducer-in-composition.js'),
+    composed1: require('raw!../code-examples/composed-reducers.js'),
 };
-
 const images = {
   edi: require("../assets/edi.png"),
   monitoring: require("../assets/monitoring.png"),
@@ -50,7 +54,12 @@ const images = {
   filterNew: require("../assets/new_filter.png"),
   react: require("../assets/react.png"),
   redux: require("../assets/redux.png"),
-pic1: require('../assets/pic-1.png'),
+  reduxScheme: require('../assets/reduxScheme.png'),
+  pic9: require('../assets/pic-9.png'),
+  pic8: require('../assets/pic-8.png'),
+  pic3: require('../assets/pic-3.png'),
+  pic4: require('../assets/pic-4.png'),
+
 };
 
 preloader(images);
@@ -133,6 +142,79 @@ export default class Presentation extends React.Component {
                         <ListItem>Нет манипуляций с DOM-ом</ListItem>
                         <ListItem>Логика приложения становится очевидной</ListItem>
                     </List>
+                </Slide>
+                <Slide {...slideStyle}>
+                    <Image height='30rem' src={images.reduxScheme} />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <Heading size={4}>Reelm</Heading>
+                </Slide>
+                <Slide {...slideStyle}>
+                    <Image height='30rem' src={images.pic9} />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <CodePane
+                        lang='js'
+                        textSize={20}
+                        source={examples.action}
+                    />
+                    <Text> action </Text>
+                        <CodePane
+                            lang='js'
+                            textSize={20}
+                            source={examples.reducer1}
+                        />
+                    <Text> reducer </Text>
+                </Slide>
+                <Slide {...slideStyle}>
+                    <Image height='30rem' src={images.pic8} />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <Image height='30rem' src={images.pic3} />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <CodePane
+                        lang='js'
+                        textSize={40}
+                        source={examples.nested}
+                    />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <CodePane
+                        lang='js'
+                        textSize={40}
+                        source={examples.composed}
+                    />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <CodePane
+                        lang='js'
+                        textSize={40}
+                        source={examples.composed1}
+                    />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <CodePane
+                        lang='js'
+                        textSize={40}
+                        source={examples.nested1}
+                    />
+                </Slide>
+                <Slide {...slideStyle}>
+                    <Image height='30rem' src={images.pic4} />
+                </Slide>
+                <Slide {...slideStyle}>
+                        <Heading size={4}>Reelm</Heading>
+                        <div style={{ textAlign: 'left', display: 'inline-block' }}>
+                            <Text lineHeight={2}>Документация: <Link href='https://reelm.github.io/ru/intro/'>https://reelm.github.io/ru/intro/</Link></Text>
+                            <Text lineHeight={2}>Исходный код: <Link href='https://github.com/tihonove/reelm'>https://github.com/tihonove/reelm</Link></Text>
+                        </div>
+                        <br />
+                        <br />
+                        <Code textSize='2rem'>npm install reelm --save</Code>
+                </Slide>
+                <Slide {...slideStyle}>
+                        <Heading size={4}>Спасибо за внимание</Heading>
                 </Slide>
             </Deck>
       </Spectacle>

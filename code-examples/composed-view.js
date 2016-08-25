@@ -1,7 +1,6 @@
 // 2. Root view
 
-// ...
 <PersonEditForm
-  person={person}
-  dispatch={forwardTo(dispatch, 'Person')}
-  />
+    person={person}
+    dispatch={forwardTo(dispatch, 'Person')}
+ />
